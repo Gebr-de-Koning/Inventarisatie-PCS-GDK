@@ -28,3 +28,21 @@ G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Applicatie\Inventarisatie P
 G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Applicatie\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.exe.manifest
 G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Applicatie\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.application
 G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Applicatie\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.vbprojResolveAssemblyReference.cache
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.exe.config
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.exe.manifest
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.application
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.exe
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.pdb
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\bin\Debug\Inventarisatie PC's.xml
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.vbprojResolveAssemblyReference.cache
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.vbproj.ResolveComReference.cache
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie_PC_s.Inventarisatie_PCs.resources
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie_PC_s.Resources.resources
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie_PC_s.SplashScreen1.resources
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.vbproj.GenerateResource.cache
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.vbproj.CoreCompileInputs.cache
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.exe.manifest
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.application
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.exe
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.xml
+H:\Inventarisatie-PCS-GDK\Inventarisatie PC's\Inventarisatie PC's\obj\Debug\Inventarisatie PC's.pdb
