@@ -38,6 +38,7 @@ Partial Class Inventarisatie_PCs
         Me.ExportToExcel = New System.Windows.Forms.Button()
         Me.KroonImage = New System.Windows.Forms.PictureBox()
         Me.Copyright = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.LogoGDK, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,6 +206,15 @@ Partial Class Inventarisatie_PCs
         Me.Copyright.TabIndex = 11
         Me.Copyright.Text = "Copyright "
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(181, 267)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Inventarisatie_PCs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,6 +222,7 @@ Partial Class Inventarisatie_PCs
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1534, 641)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Copyright)
         Me.Controls.Add(Me.KroonImage)
         Me.Controls.Add(Me.ExportToExcel)
@@ -251,4 +262,5 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents ExportToExcel As Button
     Friend WithEvents KroonImage As PictureBox
     Friend WithEvents Copyright As Label
+    Friend WithEvents Button1 As Button
 End Class
