@@ -22,10 +22,11 @@ Partial Class Inventarisatie_PCs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inventarisatie_PCs))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LogoGDK = New System.Windows.Forms.PictureBox()
         Me.LoadInFiles = New System.Windows.Forms.Button()
         Me.PCTable = New System.Windows.Forms.DataGridView()
@@ -38,6 +39,9 @@ Partial Class Inventarisatie_PCs
         Me.ExportToExcel = New System.Windows.Forms.Button()
         Me.KroonImage = New System.Windows.Forms.PictureBox()
         Me.Copyright = New System.Windows.Forms.Label()
+        Me.Datum = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Tijd = New System.Windows.Forms.Label()
         CType(Me.LogoGDK, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,35 +79,37 @@ Partial Class Inventarisatie_PCs
         Me.PCTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.PCTable.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.PCTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.PCTable.ColumnHeadersHeight = 30
         Me.PCTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle8
         Me.PCTable.Location = New System.Drawing.Point(12, 147)
         Me.PCTable.Name = "PCTable"
         Me.PCTable.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.PCTable.RowHeadersVisible = False
+        Me.PCTable.RowHeadersWidth = 20
         Me.PCTable.Size = New System.Drawing.Size(1510, 469)
         Me.PCTable.TabIndex = 2
         '
@@ -199,11 +205,37 @@ Partial Class Inventarisatie_PCs
         Me.Copyright.AutoSize = True
         Me.Copyright.Font = New System.Drawing.Font("Klavika Rg", 8.999999!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Copyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.Copyright.Location = New System.Drawing.Point(12, 619)
+        Me.Copyright.Location = New System.Drawing.Point(712, 619)
         Me.Copyright.Name = "Copyright"
         Me.Copyright.Size = New System.Drawing.Size(61, 14)
         Me.Copyright.TabIndex = 11
         Me.Copyright.Text = "Copyright "
+        '
+        'Datum
+        '
+        Me.Datum.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Datum.AutoSize = True
+        Me.Datum.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Datum.Location = New System.Drawing.Point(1305, 12)
+        Me.Datum.Name = "Datum"
+        Me.Datum.Size = New System.Drawing.Size(64, 24)
+        Me.Datum.TabIndex = 12
+        Me.Datum.Text = "Date: "
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'Tijd
+        '
+        Me.Tijd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tijd.AutoSize = True
+        Me.Tijd.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tijd.Location = New System.Drawing.Point(1305, 38)
+        Me.Tijd.Name = "Tijd"
+        Me.Tijd.Size = New System.Drawing.Size(63, 24)
+        Me.Tijd.TabIndex = 13
+        Me.Tijd.Text = "Time:"
         '
         'Inventarisatie_PCs
         '
@@ -212,6 +244,8 @@ Partial Class Inventarisatie_PCs
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1534, 641)
+        Me.Controls.Add(Me.Tijd)
+        Me.Controls.Add(Me.Datum)
         Me.Controls.Add(Me.Copyright)
         Me.Controls.Add(Me.KroonImage)
         Me.Controls.Add(Me.ExportToExcel)
@@ -251,4 +285,7 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents ExportToExcel As Button
     Friend WithEvents KroonImage As PictureBox
     Friend WithEvents Copyright As Label
+    Friend WithEvents Datum As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Tijd As Label
 End Class

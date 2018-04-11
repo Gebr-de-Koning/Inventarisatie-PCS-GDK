@@ -44,7 +44,6 @@ Public Class Inventarisatie_PCs
         ExtensionMethods.DoubleBuffered(PCTable, True)
         Copyright.Text = "Copyright " + Chr(169) + " 2018 - All rights reserved - Gebr. de Koning Papendrecht - Yanoah Wiersma"
         PositionControls()
-        'test
 
         With dt.Columns
             .Add("Datum en tijd", GetType(Date))
@@ -487,4 +486,8 @@ Public Class Inventarisatie_PCs
         PositionControls()
     End Sub
 
+    Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
+        Datum.Text = "Datum: " + Format(Now, "dd-MM-yyyy")
+        Tijd.Text = "Tijd: " + Format(Now, "HH:mm:ss")
+    End Sub
 End Class
