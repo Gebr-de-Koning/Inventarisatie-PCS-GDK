@@ -44,7 +44,6 @@ Public Class Inventarisatie_PCs
         ExtensionMethods.DoubleBuffered(PCTable, True)
         Copyright.Text = "Copyright " + Chr(169) + " 2018 - All rights reserved - Gebr. de Koning Papendrecht - Yanoah Wiersma"
         PositionControls()
-        'test
 
         With dt.Columns
             .Add("Datum en tijd", GetType(Date))
