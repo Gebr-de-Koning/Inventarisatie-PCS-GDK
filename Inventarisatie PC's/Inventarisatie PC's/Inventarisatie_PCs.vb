@@ -454,6 +454,7 @@ Public Class Inventarisatie_PCs
         If dataGeladen = True Then
             dt.Clear()
             dataGeladen = False
+            duplicatesCleared = False
         Else
             MessageBox.Show("De tabel is al leeg.", "Probleem gevonden", MessageBoxButtons.OK)
         End If
