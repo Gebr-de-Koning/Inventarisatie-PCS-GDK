@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="computer_2_cy0_icon.ico" />
+    <None Include="Resources\click_arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
