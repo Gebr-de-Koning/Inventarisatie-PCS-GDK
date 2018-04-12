@@ -23,11 +23,10 @@ Partial Class Inventarisatie_PCs
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inventarisatie_PCs))
-        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.LogoGDK1 = New System.Windows.Forms.PictureBox()
         Me.LoadInFiles = New System.Windows.Forms.Button()
         Me.PCTable = New System.Windows.Forms.DataGridView()
         Me.ClearTable = New System.Windows.Forms.Button()
@@ -52,7 +51,7 @@ Partial Class Inventarisatie_PCs
         Me.LogoGDK9 = New System.Windows.Forms.PictureBox()
         Me.LogoGDK10 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LogoGDK1 = New System.Windows.Forms.PictureBox()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoGDK2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,17 +63,8 @@ Partial Class Inventarisatie_PCs
         CType(Me.LogoGDK8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoGDK9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoGDK10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LogoGDK1
-        '
-        Me.LogoGDK1.Image = CType(resources.GetObject("LogoGDK1.Image"), System.Drawing.Image)
-        Me.LogoGDK1.Location = New System.Drawing.Point(26, 12)
-        Me.LogoGDK1.Name = "LogoGDK1"
-        Me.LogoGDK1.Size = New System.Drawing.Size(190, 132)
-        Me.LogoGDK1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LogoGDK1.TabIndex = 0
-        Me.LogoGDK1.TabStop = False
         '
         'LoadInFiles
         '
@@ -98,35 +88,35 @@ Partial Class Inventarisatie_PCs
         Me.PCTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.PCTable.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.PCTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle37.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.PCTable.ColumnHeadersHeight = 30
         Me.PCTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle8
         Me.PCTable.Location = New System.Drawing.Point(12, 147)
         Me.PCTable.Name = "PCTable"
         Me.PCTable.ReadOnly = True
-        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.PCTable.RowHeadersVisible = False
         Me.PCTable.RowHeadersWidth = 20
         Me.PCTable.Size = New System.Drawing.Size(1510, 469)
@@ -235,7 +225,7 @@ Partial Class Inventarisatie_PCs
         Me.Datum.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Datum.AutoSize = True
         Me.Datum.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Datum.Location = New System.Drawing.Point(1305, 12)
+        Me.Datum.Location = New System.Drawing.Point(1303, 23)
         Me.Datum.Name = "Datum"
         Me.Datum.Size = New System.Drawing.Size(64, 24)
         Me.Datum.TabIndex = 12
@@ -250,7 +240,7 @@ Partial Class Inventarisatie_PCs
         Me.Tijd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tijd.AutoSize = True
         Me.Tijd.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tijd.Location = New System.Drawing.Point(1305, 38)
+        Me.Tijd.Location = New System.Drawing.Point(1302, 51)
         Me.Tijd.Name = "Tijd"
         Me.Tijd.Size = New System.Drawing.Size(63, 24)
         Me.Tijd.TabIndex = 13
@@ -357,8 +347,17 @@ Partial Class Inventarisatie_PCs
         '
         'Timer2
         '
-        Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 75
+        Me.Timer2.Interval = 65
+        '
+        'LogoGDK1
+        '
+        Me.LogoGDK1.Image = CType(resources.GetObject("LogoGDK1.Image"), System.Drawing.Image)
+        Me.LogoGDK1.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK1.Name = "LogoGDK1"
+        Me.LogoGDK1.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK1.TabIndex = 23
+        Me.LogoGDK1.TabStop = False
         '
         'Inventarisatie_PCs
         '
@@ -367,6 +366,7 @@ Partial Class Inventarisatie_PCs
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1534, 641)
+        Me.Controls.Add(Me.LogoGDK1)
         Me.Controls.Add(Me.LogoGDK10)
         Me.Controls.Add(Me.LogoGDK9)
         Me.Controls.Add(Me.LogoGDK8)
@@ -389,7 +389,6 @@ Partial Class Inventarisatie_PCs
         Me.Controls.Add(Me.ClearTable)
         Me.Controls.Add(Me.PCTable)
         Me.Controls.Add(Me.LoadInFiles)
-        Me.Controls.Add(Me.LogoGDK1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -397,7 +396,6 @@ Partial Class Inventarisatie_PCs
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventarisatie PC's"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoGDK2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -409,12 +407,11 @@ Partial Class Inventarisatie_PCs
         CType(Me.LogoGDK8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoGDK9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoGDK10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents LogoGDK1 As PictureBox
     Friend WithEvents LoadInFiles As Button
     Friend WithEvents PCTable As DataGridView
     Friend WithEvents ClearTable As Button
@@ -439,4 +436,5 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents LogoGDK9 As PictureBox
     Friend WithEvents LogoGDK10 As PictureBox
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents LogoGDK1 As PictureBox
 End Class

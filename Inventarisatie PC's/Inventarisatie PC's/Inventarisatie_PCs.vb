@@ -494,82 +494,87 @@ Public Class Inventarisatie_PCs
 
     Private Sub Timer2_Tick(sender As System.Object, e As System.EventArgs) Handles Timer2.Tick
         imageNumber += 1
-        Dim number As Integer = imageNumber Mod 19
-        If number = 1 Then
+        If imageNumber = 1 Then
             LogoGDK10.Visible = False
             LogoGDK1.Visible = True
         End If
-        If number = 2 Then
+        If imageNumber = 2 Then
             LogoGDK1.Visible = False
             LogoGDK2.Visible = True
         End If
-        If number = 3 Then
+        If imageNumber = 3 Then
             LogoGDK2.Visible = False
             LogoGDK3.Visible = True
         End If
-        If number = 4 Then
+        If imageNumber = 4 Then
             LogoGDK3.Visible = False
             LogoGDK4.Visible = True
         End If
-        If number = 5 Then
+        If imageNumber = 5 Then
             LogoGDK4.Visible = False
             LogoGDK5.Visible = True
         End If
-        If number = 6 Then
+        If imageNumber = 6 Then
             LogoGDK5.Visible = False
             LogoGDK6.Visible = True
         End If
-        If number = 7 Then
+        If imageNumber = 7 Then
             LogoGDK6.Visible = False
             LogoGDK7.Visible = True
         End If
-        If number = 8 Then
+        If imageNumber = 8 Then
             LogoGDK7.Visible = False
             LogoGDK8.Visible = True
         End If
-        If number = 9 Then
+        If imageNumber = 9 Then
             LogoGDK8.Visible = False
             LogoGDK9.Visible = True
         End If
-        If number = 10 Then
+        If imageNumber = 10 Then
             LogoGDK9.Visible = False
             LogoGDK10.Visible = True
         End If
-        If number = 11 Then
+        If imageNumber = 11 Then
             LogoGDK10.Visible = False
             LogoGDK9.Visible = True
         End If
-        If number = 12 Then
+        If imageNumber = 12 Then
             LogoGDK9.Visible = False
             LogoGDK8.Visible = True
         End If
-        If number = 13 Then
+        If imageNumber = 13 Then
             LogoGDK8.Visible = False
             LogoGDK7.Visible = True
         End If
-        If number = 14 Then
+        If imageNumber = 14 Then
             LogoGDK7.Visible = False
             LogoGDK6.Visible = True
         End If
-        If number = 15 Then
+        If imageNumber = 15 Then
             LogoGDK6.Visible = False
             LogoGDK5.Visible = True
         End If
-        If number = 16 Then
+        If imageNumber = 16 Then
             LogoGDK5.Visible = False
             LogoGDK4.Visible = True
         End If
-        If number = 17 Then
+        If imageNumber = 17 Then
             LogoGDK4.Visible = False
             LogoGDK3.Visible = True
         End If
-        If number = 18 Then
+        If imageNumber = 18 Then
             LogoGDK3.Visible = False
             LogoGDK2.Visible = True
         End If
-        If number = 0 Then
+        If imageNumber = 19 Then
             LogoGDK2.Visible = False
             LogoGDK1.Visible = True
+            imageNumber = 1
+            Timer2.Enabled = False
         End If
+    End Sub
+
+    Private Sub LogoGDK1_Click(sender As Object, e As EventArgs) Handles LogoGDK1.Click
+        Timer2.Enabled = True
     End Sub
 End Class
