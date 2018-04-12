@@ -24,10 +24,10 @@ Partial Class Inventarisatie_PCs
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inventarisatie_PCs))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.LogoGDK = New System.Windows.Forms.PictureBox()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.LogoGDK1 = New System.Windows.Forms.PictureBox()
         Me.LoadInFiles = New System.Windows.Forms.Button()
         Me.PCTable = New System.Windows.Forms.DataGridView()
         Me.ClearTable = New System.Windows.Forms.Button()
@@ -42,20 +42,39 @@ Partial Class Inventarisatie_PCs
         Me.Datum = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Tijd = New System.Windows.Forms.Label()
-        CType(Me.LogoGDK, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LogoGDK2 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK3 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK4 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK5 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK6 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK7 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK8 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK9 = New System.Windows.Forms.PictureBox()
+        Me.LogoGDK10 = New System.Windows.Forms.PictureBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoGDK10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'LogoGDK
+        'LogoGDK1
         '
-        Me.LogoGDK.Image = CType(resources.GetObject("LogoGDK.Image"), System.Drawing.Image)
-        Me.LogoGDK.Location = New System.Drawing.Point(26, 12)
-        Me.LogoGDK.Name = "LogoGDK"
-        Me.LogoGDK.Size = New System.Drawing.Size(190, 132)
-        Me.LogoGDK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LogoGDK.TabIndex = 0
-        Me.LogoGDK.TabStop = False
+        Me.LogoGDK1.Image = CType(resources.GetObject("LogoGDK1.Image"), System.Drawing.Image)
+        Me.LogoGDK1.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK1.Name = "LogoGDK1"
+        Me.LogoGDK1.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK1.TabIndex = 0
+        Me.LogoGDK1.TabStop = False
         '
         'LoadInFiles
         '
@@ -79,35 +98,35 @@ Partial Class Inventarisatie_PCs
         Me.PCTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.PCTable.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.PCTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Klavika Bd", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle37
         Me.PCTable.ColumnHeadersHeight = 30
         Me.PCTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.PCTable.DefaultCellStyle = DataGridViewCellStyle38
         Me.PCTable.Location = New System.Drawing.Point(12, 147)
         Me.PCTable.Name = "PCTable"
         Me.PCTable.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PCTable.RowHeadersDefaultCellStyle = DataGridViewCellStyle39
         Me.PCTable.RowHeadersVisible = False
         Me.PCTable.RowHeadersWidth = 20
         Me.PCTable.Size = New System.Drawing.Size(1510, 469)
@@ -237,6 +256,110 @@ Partial Class Inventarisatie_PCs
         Me.Tijd.TabIndex = 13
         Me.Tijd.Text = "Time:"
         '
+        'LogoGDK2
+        '
+        Me.LogoGDK2.Image = CType(resources.GetObject("LogoGDK2.Image"), System.Drawing.Image)
+        Me.LogoGDK2.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK2.Name = "LogoGDK2"
+        Me.LogoGDK2.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK2.TabIndex = 14
+        Me.LogoGDK2.TabStop = False
+        Me.LogoGDK2.Visible = False
+        '
+        'LogoGDK3
+        '
+        Me.LogoGDK3.Image = CType(resources.GetObject("LogoGDK3.Image"), System.Drawing.Image)
+        Me.LogoGDK3.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK3.Name = "LogoGDK3"
+        Me.LogoGDK3.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK3.TabIndex = 15
+        Me.LogoGDK3.TabStop = False
+        Me.LogoGDK3.Visible = False
+        '
+        'LogoGDK4
+        '
+        Me.LogoGDK4.Image = CType(resources.GetObject("LogoGDK4.Image"), System.Drawing.Image)
+        Me.LogoGDK4.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK4.Name = "LogoGDK4"
+        Me.LogoGDK4.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK4.TabIndex = 16
+        Me.LogoGDK4.TabStop = False
+        Me.LogoGDK4.Visible = False
+        '
+        'LogoGDK5
+        '
+        Me.LogoGDK5.Image = CType(resources.GetObject("LogoGDK5.Image"), System.Drawing.Image)
+        Me.LogoGDK5.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK5.Name = "LogoGDK5"
+        Me.LogoGDK5.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK5.TabIndex = 17
+        Me.LogoGDK5.TabStop = False
+        Me.LogoGDK5.Visible = False
+        '
+        'LogoGDK6
+        '
+        Me.LogoGDK6.Image = CType(resources.GetObject("LogoGDK6.Image"), System.Drawing.Image)
+        Me.LogoGDK6.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK6.Name = "LogoGDK6"
+        Me.LogoGDK6.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK6.TabIndex = 18
+        Me.LogoGDK6.TabStop = False
+        Me.LogoGDK6.Visible = False
+        '
+        'LogoGDK7
+        '
+        Me.LogoGDK7.Image = CType(resources.GetObject("LogoGDK7.Image"), System.Drawing.Image)
+        Me.LogoGDK7.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK7.Name = "LogoGDK7"
+        Me.LogoGDK7.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK7.TabIndex = 19
+        Me.LogoGDK7.TabStop = False
+        Me.LogoGDK7.Visible = False
+        '
+        'LogoGDK8
+        '
+        Me.LogoGDK8.Image = CType(resources.GetObject("LogoGDK8.Image"), System.Drawing.Image)
+        Me.LogoGDK8.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK8.Name = "LogoGDK8"
+        Me.LogoGDK8.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK8.TabIndex = 20
+        Me.LogoGDK8.TabStop = False
+        Me.LogoGDK8.Visible = False
+        '
+        'LogoGDK9
+        '
+        Me.LogoGDK9.Image = CType(resources.GetObject("LogoGDK9.Image"), System.Drawing.Image)
+        Me.LogoGDK9.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK9.Name = "LogoGDK9"
+        Me.LogoGDK9.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK9.TabIndex = 21
+        Me.LogoGDK9.TabStop = False
+        Me.LogoGDK9.Visible = False
+        '
+        'LogoGDK10
+        '
+        Me.LogoGDK10.Image = CType(resources.GetObject("LogoGDK10.Image"), System.Drawing.Image)
+        Me.LogoGDK10.Location = New System.Drawing.Point(26, 12)
+        Me.LogoGDK10.Name = "LogoGDK10"
+        Me.LogoGDK10.Size = New System.Drawing.Size(190, 132)
+        Me.LogoGDK10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoGDK10.TabIndex = 22
+        Me.LogoGDK10.TabStop = False
+        Me.LogoGDK10.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 75
+        '
         'Inventarisatie_PCs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,6 +367,15 @@ Partial Class Inventarisatie_PCs
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1534, 641)
+        Me.Controls.Add(Me.LogoGDK10)
+        Me.Controls.Add(Me.LogoGDK9)
+        Me.Controls.Add(Me.LogoGDK8)
+        Me.Controls.Add(Me.LogoGDK7)
+        Me.Controls.Add(Me.LogoGDK6)
+        Me.Controls.Add(Me.LogoGDK5)
+        Me.Controls.Add(Me.LogoGDK4)
+        Me.Controls.Add(Me.LogoGDK3)
+        Me.Controls.Add(Me.LogoGDK2)
         Me.Controls.Add(Me.Tijd)
         Me.Controls.Add(Me.Datum)
         Me.Controls.Add(Me.Copyright)
@@ -257,7 +389,7 @@ Partial Class Inventarisatie_PCs
         Me.Controls.Add(Me.ClearTable)
         Me.Controls.Add(Me.PCTable)
         Me.Controls.Add(Me.LoadInFiles)
-        Me.Controls.Add(Me.LogoGDK)
+        Me.Controls.Add(Me.LogoGDK1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -265,15 +397,24 @@ Partial Class Inventarisatie_PCs
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventarisatie PC's"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.LogoGDK, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoGDK10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents LogoGDK As PictureBox
+    Friend WithEvents LogoGDK1 As PictureBox
     Friend WithEvents LoadInFiles As Button
     Friend WithEvents PCTable As DataGridView
     Friend WithEvents ClearTable As Button
@@ -288,4 +429,14 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents Datum As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Tijd As Label
+    Friend WithEvents LogoGDK2 As PictureBox
+    Friend WithEvents LogoGDK3 As PictureBox
+    Friend WithEvents LogoGDK4 As PictureBox
+    Friend WithEvents LogoGDK5 As PictureBox
+    Friend WithEvents LogoGDK6 As PictureBox
+    Friend WithEvents LogoGDK7 As PictureBox
+    Friend WithEvents LogoGDK8 As PictureBox
+    Friend WithEvents LogoGDK9 As PictureBox
+    Friend WithEvents LogoGDK10 As PictureBox
+    Friend WithEvents Timer2 As Timer
 End Class

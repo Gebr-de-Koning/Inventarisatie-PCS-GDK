@@ -39,6 +39,7 @@ Public Class Inventarisatie_PCs
     Private bs As New BindingSource
     Private dataGeladen As Boolean = False
     Private duplicatesCleared As Boolean = False
+    Private imageNumber = 1
 
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtensionMethods.DoubleBuffered(PCTable, True)
@@ -489,5 +490,86 @@ Public Class Inventarisatie_PCs
     Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
         Datum.Text = "Datum: " + Format(Now, "dd-MM-yyyy")
         Tijd.Text = "Tijd: " + Format(Now, "HH:mm:ss")
+    End Sub
+
+    Private Sub Timer2_Tick(sender As System.Object, e As System.EventArgs) Handles Timer2.Tick
+        imageNumber += 1
+        Dim number As Integer = imageNumber Mod 19
+        If number = 1 Then
+            LogoGDK10.Visible = False
+            LogoGDK1.Visible = True
+        End If
+        If number = 2 Then
+            LogoGDK1.Visible = False
+            LogoGDK2.Visible = True
+        End If
+        If number = 3 Then
+            LogoGDK2.Visible = False
+            LogoGDK3.Visible = True
+        End If
+        If number = 4 Then
+            LogoGDK3.Visible = False
+            LogoGDK4.Visible = True
+        End If
+        If number = 5 Then
+            LogoGDK4.Visible = False
+            LogoGDK5.Visible = True
+        End If
+        If number = 6 Then
+            LogoGDK5.Visible = False
+            LogoGDK6.Visible = True
+        End If
+        If number = 7 Then
+            LogoGDK6.Visible = False
+            LogoGDK7.Visible = True
+        End If
+        If number = 8 Then
+            LogoGDK7.Visible = False
+            LogoGDK8.Visible = True
+        End If
+        If number = 9 Then
+            LogoGDK8.Visible = False
+            LogoGDK9.Visible = True
+        End If
+        If number = 10 Then
+            LogoGDK9.Visible = False
+            LogoGDK10.Visible = True
+        End If
+        If number = 11 Then
+            LogoGDK10.Visible = False
+            LogoGDK9.Visible = True
+        End If
+        If number = 12 Then
+            LogoGDK9.Visible = False
+            LogoGDK8.Visible = True
+        End If
+        If number = 13 Then
+            LogoGDK8.Visible = False
+            LogoGDK7.Visible = True
+        End If
+        If number = 14 Then
+            LogoGDK7.Visible = False
+            LogoGDK6.Visible = True
+        End If
+        If number = 15 Then
+            LogoGDK6.Visible = False
+            LogoGDK5.Visible = True
+        End If
+        If number = 16 Then
+            LogoGDK5.Visible = False
+            LogoGDK4.Visible = True
+        End If
+        If number = 17 Then
+            LogoGDK4.Visible = False
+            LogoGDK3.Visible = True
+        End If
+        If number = 18 Then
+            LogoGDK3.Visible = False
+            LogoGDK2.Visible = True
+        End If
+        If number = 0 Then
+            LogoGDK2.Visible = False
+            LogoGDK1.Visible = True
+        End If
     End Sub
 End Class
