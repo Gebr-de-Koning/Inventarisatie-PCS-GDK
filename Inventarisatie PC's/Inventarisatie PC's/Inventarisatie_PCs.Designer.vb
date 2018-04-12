@@ -39,7 +39,7 @@ Partial Class Inventarisatie_PCs
         Me.KroonImage = New System.Windows.Forms.PictureBox()
         Me.Copyright = New System.Windows.Forms.Label()
         Me.Datum = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.DateTime = New System.Windows.Forms.Timer(Me.components)
         Me.Tijd = New System.Windows.Forms.Label()
         Me.LogoGDK2 = New System.Windows.Forms.PictureBox()
         Me.LogoGDK3 = New System.Windows.Forms.PictureBox()
@@ -50,7 +50,7 @@ Partial Class Inventarisatie_PCs
         Me.LogoGDK8 = New System.Windows.Forms.PictureBox()
         Me.LogoGDK9 = New System.Windows.Forms.PictureBox()
         Me.LogoGDK10 = New System.Windows.Forms.PictureBox()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.ImageTimer = New System.Windows.Forms.Timer(Me.components)
         Me.LogoGDK1 = New System.Windows.Forms.PictureBox()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -231,9 +231,9 @@ Partial Class Inventarisatie_PCs
         Me.Datum.TabIndex = 12
         Me.Datum.Text = "Date: "
         '
-        'Timer1
+        'DateTime
         '
-        Me.Timer1.Enabled = True
+        Me.DateTime.Enabled = True
         '
         'Tijd
         '
@@ -345,9 +345,9 @@ Partial Class Inventarisatie_PCs
         Me.LogoGDK10.TabStop = False
         Me.LogoGDK10.Visible = False
         '
-        'Timer2
+        'ImageTimer
         '
-        Me.Timer2.Interval = 65
+        Me.ImageTimer.Interval = 65
         '
         'LogoGDK1
         '
@@ -424,7 +424,7 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents KroonImage As PictureBox
     Friend WithEvents Copyright As Label
     Friend WithEvents Datum As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents DateTime As Timer
     Friend WithEvents Tijd As Label
     Friend WithEvents LogoGDK2 As PictureBox
     Friend WithEvents LogoGDK3 As PictureBox
@@ -435,6 +435,6 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents LogoGDK8 As PictureBox
     Friend WithEvents LogoGDK9 As PictureBox
     Friend WithEvents LogoGDK10 As PictureBox
-    Friend WithEvents Timer2 As Timer
+    Friend WithEvents ImageTimer As Timer
     Friend WithEvents LogoGDK1 As PictureBox
 End Class

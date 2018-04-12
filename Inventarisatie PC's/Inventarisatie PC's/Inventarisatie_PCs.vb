@@ -487,12 +487,12 @@ Public Class Inventarisatie_PCs
         PositionControls()
     End Sub
 
-    Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
+    Private Sub DateTime_Tick(sender As System.Object, e As System.EventArgs) Handles DateTime.Tick
         Datum.Text = "Datum: " + Format(Now, "dd-MM-yyyy")
         Tijd.Text = "Tijd: " + Format(Now, "HH:mm:ss")
     End Sub
 
-    Private Sub Timer2_Tick(sender As System.Object, e As System.EventArgs) Handles Timer2.Tick
+    Private Sub ImageTimer_Tick(sender As System.Object, e As System.EventArgs) Handles ImageTimer.Tick
         imageNumber += 1
         If imageNumber = 1 Then
             LogoGDK10.Visible = False
@@ -570,11 +570,11 @@ Public Class Inventarisatie_PCs
             LogoGDK2.Visible = False
             LogoGDK1.Visible = True
             imageNumber = 1
-            Timer2.Enabled = False
+            ImageTimer.Enabled = False
         End If
     End Sub
 
     Private Sub LogoGDK1_Click(sender As Object, e As EventArgs) Handles LogoGDK1.Click
-        Timer2.Enabled = True
+        ImageTimer.Enabled = True
     End Sub
 End Class
