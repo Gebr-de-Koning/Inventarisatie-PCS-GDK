@@ -138,7 +138,8 @@ Public Class Inventarisatie_PCs
         For Each column As DataGridViewColumn In PCTable.Columns
             xlWorkSheet.Cells(1, column.Index + 1) = column.HeaderText
             xlWorkSheet.Cells(1, column.Index + 1).Font.Bold = True
-            xlWorkSheet.Cells(1, column.Index + 1).Interior.Color = 65535
+            xlWorkSheet.Cells(1, column.Index + 1).Font.Color = RGB(255, 255, 255)
+            xlWorkSheet.Cells(1, column.Index + 1).Interior.Color = RGB(27, 37, 70)
         Next
 
         'Inhoud
@@ -345,9 +346,7 @@ Public Class Inventarisatie_PCs
                     myComputer.FreeSpace = CInt(info(1))
             End Select
         End If
-
         iHardDisks += 1
-
     End Sub
 
     Private Sub WriteComputerToData(ByRef myComputer As Computer, ByRef AantalDisks As Integer)
