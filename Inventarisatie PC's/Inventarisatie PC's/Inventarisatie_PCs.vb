@@ -15,6 +15,12 @@ Public Class Inventarisatie_PCs
         Public GPU As GPU
         Public FreeSpace As Integer
         Public Disks() As Disk
+        Public Licenties() As Licentie
+    End Structure
+
+    Private Structure Licentie
+        Public Programma As String
+        Public Code As String
     End Structure
 
     Private Structure CPU
@@ -66,6 +72,16 @@ Public Class Inventarisatie_PCs
             .Add("Disk 2: Naam", GetType(String))
             .Add("Disk 2: Media Type", GetType(String))
             .Add("Disk 2: Total Space (GB)", GetType(Integer))
+            .Add("Licentie 1: Programma", GetType(String))
+            .Add("Licentie 1: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 2: Programma", GetType(String))
+            .Add("Licentie 2: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 3: Programma", GetType(String))
+            .Add("Licentie 3: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 4: Programma", GetType(String))
+            .Add("Licentie 4: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 5: Programma", GetType(String))
+            .Add("Licentie 5: Laatste 5 tekens", GetType(String))
         End With
 
         bs.DataSource = dt
@@ -217,7 +233,9 @@ Public Class Inventarisatie_PCs
     Private Sub ReadFile(FileName As String)
         Dim myComputer As New Computer
         Dim Subject As String = ""
+        Dim SubjectLicentie As String = ""
         Dim iHardDisks As Integer = 0
+        Dim iLicenties As Integer = -1
         Dim textline As String
         ReDim Preserve myComputer.Disks(iHardDisks)
 
@@ -225,14 +243,15 @@ Public Class Inventarisatie_PCs
         Do
             textline = objReader.ReadLine()
             If Not textline Is Nothing Then
-                WriteToArray(textline, myComputer, Subject, iHardDisks)
+                WriteToArray(textline, myComputer, Subject, SubjectLicentie, iHardDisks, iLicenties)
             End If
         Loop Until textline Is Nothing
         objReader.Close()
 
         Dim AantalDisks As Integer = myComputer.Disks.Length
+        Dim AantalLicenties As Integer = myComputer.Disks.Length
         If Not myComputer.Model = "VMware Virtual Platform" Then
-            WriteComputerToData(myComputer, AantalDisks)
+            WriteComputerToData(myComputer, AantalDisks, AantalLicenties)
         End If
     End Sub
 
@@ -304,9 +323,15 @@ Public Class Inventarisatie_PCs
         GPUs(index) = myGPU
     End Sub
 
-    Private Sub WriteToArray(textline As String, ByRef myComputer As Computer, ByRef Subject As String, ByRef iHardDisks As Integer)
+    Private Sub WriteToArray(textline As String, ByRef myComputer As Computer, ByRef Subject As String, ByRef SubjectLicentie As String, ByRef iHardDisks As Integer, ByRef iLicenties As Integer)
         Dim info() As String
-        info = Split(textline, ": ")
+        If textline.Contains(":") Then
+            info = Split(textline, ": ")
+        ElseIf textline.Contains("p") Then
+            info = Split(textline, "p")
+        Else
+            info = Split(textline, "-")
+        End If
 
         If Subject <> info(0) Then iHardDisks = 0
 
@@ -344,100 +369,46 @@ Public Class Inventarisatie_PCs
                     Subject = info(0)
                 Case "Disk Total Free Space (GB)"
                     myComputer.FreeSpace = CInt(info(1))
+                Case "LICENSE NAME"
+                    iLicenties += 1
+                    ReDim Preserve myComputer.Licenties(iLicenties)
+                    myComputer.Licenties(iLicenties).Programma = info(1)
+                Case "Last 5 characters of installed product key"
+                    myComputer.Licenties(iLicenties).Code = info(1)
             End Select
         End If
         iHardDisks += 1
     End Sub
 
-    Private Sub WriteComputerToData(ByRef myComputer As Computer, ByRef AantalDisks As Integer)
-        If AantalDisks = 0 Then
-            With dt.Rows
-                .Add(myComputer.Datum,
-                     myComputer.User,
-                     myComputer.Workstation,
-                     myComputer.Manufacturer,
-                     myComputer.Model,
-                     myComputer.OS,
-                     myComputer.Architecture,
-                     myComputer.RAM,
-                     myComputer.CPU.Name,
-                     myComputer.CPU.Benchmark,
-                     myComputer.GPU.Name,
-                     myComputer.GPU.Benchmark,
-                     myComputer.FreeSpace
-                     )
-            End With
-
-        ElseIf AantalDisks = 1 Then
-            With dt.Rows
-                .Add(myComputer.Datum,
-                     myComputer.User,
-                     myComputer.Workstation,
-                     myComputer.Manufacturer,
-                     myComputer.Model,
-                     myComputer.OS,
-                     myComputer.Architecture,
-                     myComputer.RAM,
-                     myComputer.CPU.Name,
-                     myComputer.CPU.Benchmark,
-                     myComputer.GPU.Name,
-                     myComputer.GPU.Benchmark,
-                     myComputer.FreeSpace,
-                     myComputer.Disks(0).DiskName,
-                     myComputer.Disks(0).DiskMediaType,
-                     myComputer.Disks(0).DiskTotalSpace
-                     )
-            End With
-
-        ElseIf AantalDisks = 2 Then
-            If myComputer.Disks(0).DiskMediaType = "SSD" Then
-                With dt.Rows
-                    .Add(myComputer.Datum,
-                     myComputer.User,
-                     myComputer.Workstation,
-                     myComputer.Manufacturer,
-                     myComputer.Model,
-                     myComputer.OS,
-                     myComputer.Architecture,
-                     myComputer.RAM,
-                     myComputer.CPU.Name,
-                     myComputer.CPU.Benchmark,
-                     myComputer.GPU.Name,
-                     myComputer.GPU.Benchmark,
-                     myComputer.FreeSpace,
-                     myComputer.Disks(0).DiskName,
-                     myComputer.Disks(0).DiskMediaType,
-                     myComputer.Disks(0).DiskTotalSpace,
-                     myComputer.Disks(1).DiskName,
-                     myComputer.Disks(1).DiskMediaType,
-                     myComputer.Disks(1).DiskTotalSpace
-                     )
-                End With
-            Else
-                With dt.Rows
-                    .Add(myComputer.Datum,
-                     myComputer.User,
-                     myComputer.Workstation,
-                     myComputer.Manufacturer,
-                     myComputer.Model,
-                     myComputer.OS,
-                     myComputer.Architecture,
-                     myComputer.RAM,
-                     myComputer.CPU.Name,
-                     myComputer.CPU.Benchmark,
-                     myComputer.GPU.Name,
-                     myComputer.GPU.Benchmark,
-                     myComputer.FreeSpace,
-                     myComputer.Disks(1).DiskName,
-                     myComputer.Disks(1).DiskMediaType,
-                     myComputer.Disks(1).DiskTotalSpace,
-                     myComputer.Disks(0).DiskName,
-                     myComputer.Disks(0).DiskMediaType,
-                     myComputer.Disks(0).DiskTotalSpace
-                     )
-                End With
+    Private Sub WriteComputerToData(ByRef myComputer As Computer, ByRef AantalDisks As Integer, ByRef AantalLicenties As Integer)
+        With dt.Rows
+            .Add(myComputer.Datum,
+             myComputer.User,
+             myComputer.Workstation,
+             myComputer.Manufacturer,
+             myComputer.Model,
+             myComputer.OS,
+             myComputer.Architecture,
+             myComputer.RAM,
+             myComputer.CPU.Name,
+             myComputer.CPU.Benchmark,
+             myComputer.GPU.Name,
+             myComputer.GPU.Benchmark,
+             myComputer.FreeSpace)
+            If Not IsNothing(myComputer.Disks) Then
+                For i = 0 To UBound(myComputer.Disks)
+                    dt.Rows(dt.Rows.Count - 1).Item(13 + i * 3) = myComputer.Disks(i).DiskName
+                    dt.Rows(dt.Rows.Count - 1).Item(14 + i * 3) = myComputer.Disks(i).DiskMediaType
+                    dt.Rows(dt.Rows.Count - 1).Item(15 + i * 3) = myComputer.Disks(i).DiskTotalSpace
+                Next
             End If
-        End If
+            If Not IsNothing(myComputer.Licenties) Then
+                For j = 0 To UBound(myComputer.Licenties)
+                    dt.Rows(dt.Rows.Count - 1).Item(19 + j * 2) = myComputer.Licenties(j).Programma
+                    dt.Rows(dt.Rows.Count - 1).Item(20 + j * 2) = myComputer.Licenties(j).Code
+                Next
+            End If
+        End With
     End Sub
 
     Private Sub LoadInFiles_Click(sender As Object, e As EventArgs) Handles LoadInFiles.Click
