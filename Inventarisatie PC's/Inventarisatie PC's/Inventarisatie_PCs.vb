@@ -82,6 +82,16 @@ Public Class Inventarisatie_PCs
             .Add("Licentie 4: Laatste 5 tekens", GetType(String))
             .Add("Licentie 5: Programma", GetType(String))
             .Add("Licentie 5: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 6: Programma", GetType(String))
+            .Add("Licentie 6: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 7: Programma", GetType(String))
+            .Add("Licentie 7: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 8: Programma", GetType(String))
+            .Add("Licentie 8: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 9: Programma", GetType(String))
+            .Add("Licentie 9: Laatste 5 tekens", GetType(String))
+            .Add("Licentie 10: Programma", GetType(String))
+            .Add("Licentie 10: Laatste 5 tekens", GetType(String))
         End With
 
         bs.DataSource = dt
@@ -370,11 +380,16 @@ Public Class Inventarisatie_PCs
                 Case "Disk Total Free Space (GB)"
                     myComputer.FreeSpace = CInt(info(1))
                 Case "LICENSE NAME"
-                    iLicenties += 1
-                    ReDim Preserve myComputer.Licenties(iLicenties)
-                    myComputer.Licenties(iLicenties).Programma = info(1)
+                    SubjectLicentie = info(1)
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition") Then
+                        iLicenties += 1
+                        ReDim Preserve myComputer.Licenties(iLicenties)
+                        myComputer.Licenties(iLicenties).Programma = info(1)
+                    End If
                 Case "Last 5 characters of installed product key"
-                    myComputer.Licenties(iLicenties).Code = info(1)
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition") Then
+                        myComputer.Licenties(iLicenties).Code = info(1)
+                    End If
             End Select
         End If
         iHardDisks += 1
