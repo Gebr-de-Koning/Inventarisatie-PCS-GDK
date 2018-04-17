@@ -46,6 +46,7 @@ Public Class Inventarisatie_PCs
     Private dataGeladen As Boolean = False
     Private duplicatesCleared As Boolean = False
     Private imageNumber = 1
+    Private kroonTeller = 0
 
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtensionMethods.DoubleBuffered(PCTable, True)
@@ -559,7 +560,28 @@ Public Class Inventarisatie_PCs
         End If
     End Sub
 
+    Private Sub ImageTimer2_Tick(sender As Object, e As EventArgs) Handles ImageTimer2.Tick
+        If (kroonTeller <= 65) Then
+            KroonImage.Location = New Point(KroonImage.Location.X - 1, KroonImage.Location.Y)
+            kroonTeller += 1
+        ElseIf (kroonTeller > 65 And kroonTeller <= 200) Then
+            KroonImage.Location = New Point(KroonImage.Location.X + 1, KroonImage.Location.Y)
+            kroonTeller += 1
+        ElseIf (kroonTeller > 200 And kroonTeller <= 270) Then
+            KroonImage.Location = New Point(KroonImage.Location.X - 1, KroonImage.Location.Y)
+            kroonTeller += 1
+        End If
+        If kroonTeller = 270 Then
+            kroonTeller = 0
+            ImageTimer2.Enabled = False
+        End If
+    End Sub
+
     Private Sub LogoGDK1_Click(sender As Object, e As EventArgs) Handles LogoGDK1.Click
         ImageTimer.Enabled = True
+    End Sub
+
+    Private Sub KroonImage_Click(sender As Object, e As EventArgs) Handles KroonImage.Click
+        ImageTimer2.Enabled = True
     End Sub
 End Class
