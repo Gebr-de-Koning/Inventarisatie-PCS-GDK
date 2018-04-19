@@ -382,13 +382,13 @@ Public Class Inventarisatie_PCs
                     myComputer.FreeSpace = CInt(info(1))
                 Case "LICENSE NAME"
                     SubjectLicentie = info(1)
-                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition") Then
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition") Then
                         iLicenties += 1
                         ReDim Preserve myComputer.Licenties(iLicenties)
                         myComputer.Licenties(iLicenties).Programma = info(1)
                     End If
                 Case "Last 5 characters of installed product key"
-                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition") Then
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition") Then
                         myComputer.Licenties(iLicenties).Code = info(1)
                     End If
             End Select
