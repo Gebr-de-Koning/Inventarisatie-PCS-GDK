@@ -21,6 +21,7 @@ Public Class Inventarisatie_PCs
     Private Structure Licentie
         Public Programma As String
         Public Code As String
+        Public VolledigeCode As String
     End Structure
 
     Private Structure CPU
@@ -41,6 +42,7 @@ Public Class Inventarisatie_PCs
 
     Private CPUs() As CPU
     Private GPUs() As GPU
+    Private Licenties() As Licentie
     Private dt As New DataTable
     Private bs As New BindingSource
     Private dataGeladen As Boolean = False
@@ -226,8 +228,51 @@ Public Class Inventarisatie_PCs
                 ReadCPUBenchmarks(File)
             ElseIf File = "G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Inputfiles\GPU benchmarks.txt" Then
                 ReadGPUBenchmarks(File)
+            ElseIf File = "G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Inputfiles\Licentie codes.txt" Then
+                ReadLicenties(File)
             End If
         Next
+    End Sub
+
+    Private Sub ReadLicenties(file As String)
+        Dim textline As String
+        Dim iLicenties As Integer = 0
+        ReDim Preserve Licenties(iLicenties)
+
+        Dim objReader As New StreamReader(file)
+        Do
+            textline = objReader.ReadLine()
+            If Not textline Is Nothing Then
+                WriteLicentieToArray(textline, iLicenties)
+                iLicenties += 1
+                ReDim Preserve Licenties(iLicenties)
+            End If
+        Loop Until textline Is Nothing
+        ReDim Preserve Licenties(iLicenties - 1)
+        objReader.Close()
+
+        For Each row As DataRow In dt.Select
+            For i = 0 To 9
+                If Not IsDBNull(row(19 + i * 2)) And Not IsDBNull(row(20 + i * 2)) Then
+                    For Each Licentie In Licenties
+                        If Licentie.Code = row(20 + i * 2) Then
+                            row(19 + i * 2) = Licentie.Programma
+                            row(20 + i * 2) = Licentie.VolledigeCode
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub WriteLicentieToArray(ByRef myLine As String, ByRef index As Integer)
+        Dim myLicentie As Licentie
+        Dim info() As String
+        info = Split(myLine, ": ")
+        myLicentie.Programma = info(0)
+        myLicentie.Code = info(1)
+        myLicentie.VolledigeCode = info(2)
+        Licenties(index) = myLicentie
     End Sub
 
     Private Sub DeleteDuplicatesInTable()
@@ -280,6 +325,7 @@ Public Class Inventarisatie_PCs
                 ReDim Preserve CPUs(iCPUs)
             End If
         Loop Until textline Is Nothing
+        ReDim Preserve CPUs(iCPUs - 1)
         objReader.Close()
 
         For Each row As DataRow In dt.Select
@@ -314,6 +360,7 @@ Public Class Inventarisatie_PCs
                 ReDim Preserve GPUs(iGPUs)
             End If
         Loop Until textline Is Nothing
+        ReDim Preserve GPUs(iGPUs - 1)
         objReader.Close()
 
         For Each row As DataRow In dt.Select
@@ -422,6 +469,11 @@ Public Class Inventarisatie_PCs
                 For j = 0 To UBound(myComputer.Licenties)
                     dt.Rows(dt.Rows.Count - 1).Item(19 + j * 2) = myComputer.Licenties(j).Programma
                     dt.Rows(dt.Rows.Count - 1).Item(20 + j * 2) = myComputer.Licenties(j).Code
+                Next
+            Else
+                For k = 0 To 9
+                    dt.Rows(dt.Rows.Count - 1).Item(19 + k * 2) = " "
+                    dt.Rows(dt.Rows.Count - 1).Item(20 + k * 2) = " "
                 Next
             End If
         End With
