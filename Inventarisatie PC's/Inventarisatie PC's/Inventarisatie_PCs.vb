@@ -42,7 +42,7 @@ Public Class Inventarisatie_PCs
 
     Private CPUs() As CPU
     Private GPUs() As GPU
-    Private Licenties() As Licentie
+    Private Licenties As List(Of Licentie) = New List(Of Licentie)
     Private dt As New DataTable
     Private bs As New BindingSource
     Private dataGeladen As Boolean = False
@@ -236,28 +236,25 @@ Public Class Inventarisatie_PCs
 
     Private Sub ReadLicenties(file As String)
         Dim textline As String
-        Dim iLicenties As Integer = 0
-        ReDim Preserve Licenties(iLicenties)
 
         Dim objReader As New StreamReader(file)
         Do
             textline = objReader.ReadLine()
             If Not textline Is Nothing Then
-                WriteLicentieToArray(textline, iLicenties)
-                iLicenties += 1
-                ReDim Preserve Licenties(iLicenties)
+                WriteLicentieToArray(textline)
             End If
         Loop Until textline Is Nothing
-        ReDim Preserve Licenties(iLicenties - 1)
         objReader.Close()
 
         For Each row As DataRow In dt.Select
             For i = 0 To 9
                 If Not IsDBNull(row(19 + i * 2)) And Not IsDBNull(row(20 + i * 2)) Then
-                    For Each Licentie In Licenties
+                    For j = Licenties.Count - 1 To 0 Step -1
+                        Dim Licentie = Licenties(j)
                         If Licentie.Code = row(20 + i * 2) Then
                             row(19 + i * 2) = Licentie.Programma
                             row(20 + i * 2) = Licentie.VolledigeCode
+                            Licenties.Remove(Licentie)
                         End If
                     Next
                 End If
@@ -265,14 +262,14 @@ Public Class Inventarisatie_PCs
         Next
     End Sub
 
-    Private Sub WriteLicentieToArray(ByRef myLine As String, ByRef index As Integer)
+    Private Sub WriteLicentieToArray(ByRef myLine As String)
         Dim myLicentie As Licentie
         Dim info() As String
         info = Split(myLine, ": ")
         myLicentie.Programma = info(0)
         myLicentie.Code = info(1)
         myLicentie.VolledigeCode = info(2)
-        Licenties(index) = myLicentie
+        Licenties.Add(myLicentie)
     End Sub
 
     Private Sub DeleteDuplicatesInTable()
