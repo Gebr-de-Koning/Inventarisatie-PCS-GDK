@@ -22,6 +22,8 @@ Public Class Inventarisatie_PCs
         Public Programma As String
         Public Code As String
         Public VolledigeCode As String
+        Public Type As String
+        Public Account As String
     End Structure
 
     Private Structure CPU
@@ -77,24 +79,44 @@ Public Class Inventarisatie_PCs
             .Add("Disk 2: Total Space (GB)", GetType(Integer))
             .Add("Licentie 1: Programma", GetType(String))
             .Add("Licentie 1: Code", GetType(String))
+            .Add("Licentie 1: Doosje/Online", GetType(String))
+            .Add("Licentie 1: MS Account", GetType(String))
             .Add("Licentie 2: Programma", GetType(String))
             .Add("Licentie 2: Code", GetType(String))
+            .Add("Licentie 2: Doosje/Online", GetType(String))
+            .Add("Licentie 2: MS Account", GetType(String))
             .Add("Licentie 3: Programma", GetType(String))
             .Add("Licentie 3: Code", GetType(String))
+            .Add("Licentie 3: Doosje/Online", GetType(String))
+            .Add("Licentie 3: MS Account", GetType(String))
             .Add("Licentie 4: Programma", GetType(String))
             .Add("Licentie 4: Code", GetType(String))
+            .Add("Licentie 4: Doosje/Online", GetType(String))
+            .Add("Licentie 4: MS Account", GetType(String))
             .Add("Licentie 5: Programma", GetType(String))
             .Add("Licentie 5: Code", GetType(String))
+            .Add("Licentie 5: Doosje/Online", GetType(String))
+            .Add("Licentie 5: MS Account", GetType(String))
             .Add("Licentie 6: Programma", GetType(String))
             .Add("Licentie 6: Code", GetType(String))
+            .Add("Licentie 6: Doosje/Online", GetType(String))
+            .Add("Licentie 6: MS Account", GetType(String))
             .Add("Licentie 7: Programma", GetType(String))
             .Add("Licentie 7: Code", GetType(String))
+            .Add("Licentie 7: Doosje/Online", GetType(String))
+            .Add("Licentie 7: MS Account", GetType(String))
             .Add("Licentie 8: Programma", GetType(String))
             .Add("Licentie 8: Code", GetType(String))
+            .Add("Licentie 8: Doosje/Online", GetType(String))
+            .Add("Licentie 8: MS Account", GetType(String))
             .Add("Licentie 9: Programma", GetType(String))
             .Add("Licentie 9: Code", GetType(String))
+            .Add("Licentie 9: Doosje/Online", GetType(String))
+            .Add("Licentie 9: MS Account", GetType(String))
             .Add("Licentie 10: Programma", GetType(String))
             .Add("Licentie 10: Code", GetType(String))
+            .Add("Licentie 10: Doosje/Online", GetType(String))
+            .Add("Licentie 10: MS Account", GetType(String))
         End With
 
         bs.DataSource = dt
@@ -248,12 +270,14 @@ Public Class Inventarisatie_PCs
 
         For Each row As DataRow In dt.Select
             For i = 0 To 9
-                If Not IsDBNull(row(19 + i * 2)) And Not IsDBNull(row(20 + i * 2)) Then
+                If Not IsDBNull(row(19 + i * 4)) And Not IsDBNull(row(20 + i * 4)) Then
                     For j = Licenties.Count - 1 To 0 Step -1
                         Dim Licentie = Licenties(j)
-                        If Licentie.Code = row(20 + i * 2) Then
-                            row(19 + i * 2) = Licentie.Programma
-                            row(20 + i * 2) = Licentie.VolledigeCode
+                        If Licentie.Code = row(20 + i * 4) Then
+                            row(19 + i * 4) = Licentie.Programma
+                            row(20 + i * 4) = Licentie.VolledigeCode
+                            row(21 + i * 4) = Licentie.Type
+                            row(22 + i * 4) = Licentie.Account
                             Licenties.Remove(Licentie)
                         End If
                     Next
@@ -269,6 +293,8 @@ Public Class Inventarisatie_PCs
         myLicentie.Programma = info(0)
         myLicentie.Code = info(1)
         myLicentie.VolledigeCode = info(2)
+        myLicentie.Type = info(3)
+        myLicentie.Account = info(4)
         Licenties.Add(myLicentie)
     End Sub
 
@@ -464,13 +490,10 @@ Public Class Inventarisatie_PCs
             End If
             If Not IsNothing(myComputer.Licenties) Then
                 For j = 0 To UBound(myComputer.Licenties)
-                    dt.Rows(dt.Rows.Count - 1).Item(19 + j * 2) = myComputer.Licenties(j).Programma
-                    dt.Rows(dt.Rows.Count - 1).Item(20 + j * 2) = myComputer.Licenties(j).Code
-                Next
-            Else
-                For k = 0 To 9
-                    dt.Rows(dt.Rows.Count - 1).Item(19 + k * 2) = " "
-                    dt.Rows(dt.Rows.Count - 1).Item(20 + k * 2) = " "
+                    dt.Rows(dt.Rows.Count - 1).Item(19 + j * 4) = myComputer.Licenties(j).Programma
+                    dt.Rows(dt.Rows.Count - 1).Item(20 + j * 4) = myComputer.Licenties(j).Code
+                    dt.Rows(dt.Rows.Count - 1).Item(21 + j * 4) = myComputer.Licenties(j).Type
+                    dt.Rows(dt.Rows.Count - 1).Item(22 + j * 4) = myComputer.Licenties(j).Account
                 Next
             End If
         End With
