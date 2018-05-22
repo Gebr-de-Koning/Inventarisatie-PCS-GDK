@@ -54,7 +54,7 @@ Public Class Inventarisatie_PCs
 
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtensionMethods.DoubleBuffered(PCTable, True)
-        Copyright.Text = "Copyright " + Chr(169) + " 2018 - All rights reserved - Gebr. de Koning Papendrecht - Yanoah Wiersma"
+        Copyright.Text = "Copyright " + Chr(169) + " 2018 - All rights reserved - Gebr. de Koning Papendrecht"
         PositionControls()
 
         With dt.Columns
@@ -121,6 +121,8 @@ Public Class Inventarisatie_PCs
 
         bs.DataSource = dt
         PCTable.DataSource = dt
+        PCTable.Columns("Username").Frozen = True
+        PCTable.Columns("Werkstation").Frozen = True
     End Sub
 
     Private Sub PositionControls()
@@ -242,6 +244,9 @@ Public Class Inventarisatie_PCs
             ReadFile(File)
             teller = teller + 1
         Next
+
+        dt.DefaultView.Sort = "Werkstation ASC, Datum en tijd DESC"
+        DeleteDuplicatesInTable()
 
         path = "G:\11. ICT\03. Projecten\DKI.004 Inventarisatie PC's\Inputfiles"
         files = Directory.GetFiles(path, "*.txt")
@@ -452,13 +457,13 @@ Public Class Inventarisatie_PCs
                     myComputer.FreeSpace = CInt(info(1))
                 Case "LICENSE NAME"
                     SubjectLicentie = info(1)
-                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition") Then
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 16, Office16O365HomePremR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeProjectStdR_Grace edition") Then
                         iLicenties += 1
                         ReDim Preserve myComputer.Licenties(iLicenties)
                         myComputer.Licenties(iLicenties).Programma = info(1)
                     End If
                 Case "Last 5 characters of installed product key"
-                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition") Then
+                    If (Not SubjectLicentie = "Office 14, OfficeAccessRuntime-ByPass edition" And Not SubjectLicentie = "Office 16, Office16HomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeHomeBusinessR_Grace edition" And Not SubjectLicentie = "Office 16, Office16O365HomePremR_Grace edition" And Not SubjectLicentie = "Office 15, OfficeProjectStdR_Grace edition") Then
                         myComputer.Licenties(iLicenties).Code = info(1)
                     End If
             End Select
