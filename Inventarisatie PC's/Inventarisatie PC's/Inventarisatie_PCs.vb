@@ -546,16 +546,16 @@ Public Class Inventarisatie_PCs
         End If
     End Sub
 
-    Private Sub Form_SizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.SizeChanged
+    Private Sub Form_SizeChanged(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.SizeChanged
         PositionControls()
     End Sub
 
-    Private Sub DateTime_Tick(sender As System.Object, e As System.EventArgs) Handles DateTime.Tick
+    Private Sub DateTime_Tick(sender As Object, e As EventArgs) Handles DateTime.Tick
         Datum.Text = "Datum: " + Format(Now, "dd-MM-yyyy")
         Tijd.Text = "Tijd: " + Format(Now, "HH:mm:ss")
     End Sub
 
-    Private Sub ImageTimer_Tick(sender As System.Object, e As System.EventArgs) Handles ImageTimer.Tick
+    Private Sub ImageTimer_Tick(sender As Object, e As EventArgs) Handles ImageTimer.Tick
         imageNumber += 1
         If imageNumber = 1 Then
             LogoGDK10.Visible = False
