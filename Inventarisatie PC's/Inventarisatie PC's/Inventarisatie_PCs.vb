@@ -56,7 +56,6 @@ Public Class Inventarisatie_PCs
         ExtensionMethods.DoubleBuffered(PCTable, True)
         Copyright.Text = "Copyright " + Chr(169) + " 2018 - All rights reserved - Gebr. de Koning Papendrecht"
         PositionControls()
-
         With dt.Columns
             .Add("Datum en tijd", GetType(Date))
             .Add("Username", GetType(String))
@@ -121,6 +120,14 @@ Public Class Inventarisatie_PCs
 
         bs.DataSource = dt
         PCTable.DataSource = dt
+
+        SearchBox.Visible = False
+        PCTable.ScrollBars = ScrollBars.None
+        LoadInFilesAction()
+        dataGeladen = True
+        PCTable.ScrollBars = ScrollBars.Both
+        SearchBox.Visible = True
+
         PCTable.Columns("Username").Frozen = True
         PCTable.Columns("Werkstation").Frozen = True
     End Sub
