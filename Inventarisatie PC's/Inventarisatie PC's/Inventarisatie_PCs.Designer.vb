@@ -69,7 +69,8 @@ Partial Class Inventarisatie_PCs
         '
         'LoadInFiles
         '
-        Me.LoadInFiles.Font = New System.Drawing.Font("Klavika Rg", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.LoadInFiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.LoadInFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.LoadInFiles.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.LoadInFiles.Location = New System.Drawing.Point(231, 16)
         Me.LoadInFiles.Name = "LoadInFiles"
@@ -125,7 +126,7 @@ Partial Class Inventarisatie_PCs
         '
         'ClearTable
         '
-        Me.ClearTable.Font = New System.Drawing.Font("Klavika Rg", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.ClearTable.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.ClearTable.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.ClearTable.Location = New System.Drawing.Point(948, 79)
         Me.ClearTable.Name = "ClearTable"
@@ -148,38 +149,38 @@ Partial Class Inventarisatie_PCs
         '
         Me.SearchBoxTitle.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SearchBoxTitle.AutoSize = True
-        Me.SearchBoxTitle.Font = New System.Drawing.Font("Klavika Bd", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchBoxTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchBoxTitle.Location = New System.Drawing.Point(1305, 80)
         Me.SearchBoxTitle.Name = "SearchBoxTitle"
-        Me.SearchBoxTitle.Size = New System.Drawing.Size(82, 24)
+        Me.SearchBoxTitle.Size = New System.Drawing.Size(97, 25)
         Me.SearchBoxTitle.TabIndex = 5
         Me.SearchBoxTitle.Text = "Zoeken:"
         '
         'Titel
         '
         Me.Titel.AutoSize = True
-        Me.Titel.Font = New System.Drawing.Font("Klavika Rg", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Titel.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Titel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Titel.Location = New System.Drawing.Point(606, 12)
         Me.Titel.Name = "Titel"
-        Me.Titel.Size = New System.Drawing.Size(301, 39)
+        Me.Titel.Size = New System.Drawing.Size(325, 39)
         Me.Titel.TabIndex = 6
         Me.Titel.Text = "Inventarisatie PC's"
         '
         'Ondertitel
         '
         Me.Ondertitel.AutoSize = True
-        Me.Ondertitel.Font = New System.Drawing.Font("Klavika Rg", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ondertitel.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ondertitel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(115, Byte), Integer))
         Me.Ondertitel.Location = New System.Drawing.Point(638, 51)
         Me.Ondertitel.Name = "Ondertitel"
-        Me.Ondertitel.Size = New System.Drawing.Size(213, 33)
+        Me.Ondertitel.Size = New System.Drawing.Size(241, 33)
         Me.Ondertitel.TabIndex = 7
         Me.Ondertitel.Text = "Gebr. de Koning"
         '
         'DeleteDuplicates
         '
-        Me.DeleteDuplicates.Font = New System.Drawing.Font("Klavika Rg", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.DeleteDuplicates.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.DeleteDuplicates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.DeleteDuplicates.Location = New System.Drawing.Point(231, 80)
         Me.DeleteDuplicates.Name = "DeleteDuplicates"
@@ -190,7 +191,7 @@ Partial Class Inventarisatie_PCs
         '
         'ExportToExcel
         '
-        Me.ExportToExcel.Font = New System.Drawing.Font("Klavika Rg", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.ExportToExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.ExportToExcel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.ExportToExcel.Location = New System.Drawing.Point(948, 16)
         Me.ExportToExcel.Name = "ExportToExcel"
@@ -213,11 +214,11 @@ Partial Class Inventarisatie_PCs
         '
         Me.Copyright.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Copyright.AutoSize = True
-        Me.Copyright.Font = New System.Drawing.Font("Klavika Rg", 8.999999!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Copyright.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Copyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Copyright.Location = New System.Drawing.Point(712, 619)
         Me.Copyright.Name = "Copyright"
-        Me.Copyright.Size = New System.Drawing.Size(61, 14)
+        Me.Copyright.Size = New System.Drawing.Size(71, 15)
         Me.Copyright.TabIndex = 11
         Me.Copyright.Text = "Copyright "
         '
@@ -225,10 +226,10 @@ Partial Class Inventarisatie_PCs
         '
         Me.Datum.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Datum.AutoSize = True
-        Me.Datum.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Datum.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Datum.Location = New System.Drawing.Point(1303, 23)
         Me.Datum.Name = "Datum"
-        Me.Datum.Size = New System.Drawing.Size(64, 24)
+        Me.Datum.Size = New System.Drawing.Size(75, 25)
         Me.Datum.TabIndex = 12
         Me.Datum.Text = "Date: "
         '
@@ -241,10 +242,10 @@ Partial Class Inventarisatie_PCs
         '
         Me.Tijd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tijd.AutoSize = True
-        Me.Tijd.Font = New System.Drawing.Font("Klavika Rg", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tijd.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tijd.Location = New System.Drawing.Point(1302, 51)
         Me.Tijd.Name = "Tijd"
-        Me.Tijd.Size = New System.Drawing.Size(63, 24)
+        Me.Tijd.Size = New System.Drawing.Size(70, 25)
         Me.Tijd.TabIndex = 13
         Me.Tijd.Text = "Time:"
         '

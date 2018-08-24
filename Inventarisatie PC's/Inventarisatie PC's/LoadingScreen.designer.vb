@@ -33,11 +33,11 @@ Partial Class LoadingScreen
         'Start_title
         '
         Me.Start_title.AutoSize = True
-        Me.Start_title.Font = New System.Drawing.Font("Klavika Rg", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Start_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Start_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(115, Byte), Integer))
         Me.Start_title.Location = New System.Drawing.Point(72, 20)
         Me.Start_title.Name = "Start_title"
-        Me.Start_title.Size = New System.Drawing.Size(321, 42)
+        Me.Start_title.Size = New System.Drawing.Size(346, 42)
         Me.Start_title.TabIndex = 1
         Me.Start_title.Text = "Inventarisatie PC's"
         Me.Start_title.UseWaitCursor = True

@@ -124,7 +124,6 @@ Public Class Inventarisatie_PCs
         SearchBox.Visible = False
         PCTable.ScrollBars = ScrollBars.None
         LoadInFilesAction()
-        MakeUnknownBold()
         dataGeladen = True
         PCTable.ScrollBars = ScrollBars.Both
         SearchBox.Visible = True
@@ -450,7 +449,9 @@ Public Class Inventarisatie_PCs
                 Case "RAM (GB)"
                     myComputer.RAM = CInt(info(1))
                 Case "GPU"
-                    myComputer.GPU.Name = info(1)
+                    If Not info(1) Like "*USB*" Then
+                        myComputer.GPU.Name = info(1)
+                    End If
                 Case "Disk Name"
                     ReDim Preserve myComputer.Disks(iHardDisks)
                     myComputer.Disks(iHardDisks).DiskName = info(1)
@@ -510,16 +511,6 @@ Public Class Inventarisatie_PCs
                 Next
             End If
         End With
-    End Sub
-
-    Private Sub MakeUnknownBold() Handles PCTable.Sorted
-        For Each dr As DataGridViewRow In PCTable.Rows
-            For i = 0 To 9
-                If (dr.Cells(20 + i * 4).Value.ToString.Length = 5) Then
-                    dr.Cells(20 + i * 4).Style.Font = New Font("Microsoft Sans Serif", 8.25, FontStyle.Bold)
-                End If
-            Next
-        Next
     End Sub
 
     Private Sub LoadInFiles_Click(sender As Object, e As EventArgs) Handles LoadInFiles.Click
