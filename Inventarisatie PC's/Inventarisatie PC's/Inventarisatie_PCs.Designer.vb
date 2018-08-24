@@ -27,14 +27,11 @@ Partial Class Inventarisatie_PCs
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inventarisatie_PCs))
-        Me.LoadInFiles = New System.Windows.Forms.Button()
         Me.PCTable = New System.Windows.Forms.DataGridView()
-        Me.ClearTable = New System.Windows.Forms.Button()
         Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.SearchBoxTitle = New System.Windows.Forms.Label()
         Me.Titel = New System.Windows.Forms.Label()
         Me.Ondertitel = New System.Windows.Forms.Label()
-        Me.DeleteDuplicates = New System.Windows.Forms.Button()
         Me.ExportToExcel = New System.Windows.Forms.Button()
         Me.KroonImage = New System.Windows.Forms.PictureBox()
         Me.Copyright = New System.Windows.Forms.Label()
@@ -66,18 +63,6 @@ Partial Class Inventarisatie_PCs
         CType(Me.LogoGDK10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoGDK1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LoadInFiles
-        '
-        Me.LoadInFiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.LoadInFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
-        Me.LoadInFiles.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.LoadInFiles.Location = New System.Drawing.Point(231, 16)
-        Me.LoadInFiles.Name = "LoadInFiles"
-        Me.LoadInFiles.Size = New System.Drawing.Size(333, 46)
-        Me.LoadInFiles.TabIndex = 1
-        Me.LoadInFiles.Text = "Ophalen gegevens"
-        Me.LoadInFiles.UseVisualStyleBackColor = True
         '
         'PCTable
         '
@@ -124,17 +109,6 @@ Partial Class Inventarisatie_PCs
         Me.PCTable.Size = New System.Drawing.Size(1510, 469)
         Me.PCTable.TabIndex = 2
         '
-        'ClearTable
-        '
-        Me.ClearTable.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
-        Me.ClearTable.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.ClearTable.Location = New System.Drawing.Point(948, 79)
-        Me.ClearTable.Name = "ClearTable"
-        Me.ClearTable.Size = New System.Drawing.Size(333, 47)
-        Me.ClearTable.TabIndex = 3
-        Me.ClearTable.Text = "Leeg de tabel"
-        Me.ClearTable.UseVisualStyleBackColor = True
-        '
         'SearchBox
         '
         Me.SearchBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -178,22 +152,11 @@ Partial Class Inventarisatie_PCs
         Me.Ondertitel.TabIndex = 7
         Me.Ondertitel.Text = "Gebr. de Koning"
         '
-        'DeleteDuplicates
-        '
-        Me.DeleteDuplicates.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
-        Me.DeleteDuplicates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.DeleteDuplicates.Location = New System.Drawing.Point(231, 80)
-        Me.DeleteDuplicates.Name = "DeleteDuplicates"
-        Me.DeleteDuplicates.Size = New System.Drawing.Size(333, 46)
-        Me.DeleteDuplicates.TabIndex = 8
-        Me.DeleteDuplicates.Text = "Verwijder dubbele werkstations"
-        Me.DeleteDuplicates.UseVisualStyleBackColor = True
-        '
         'ExportToExcel
         '
         Me.ExportToExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
         Me.ExportToExcel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.ExportToExcel.Location = New System.Drawing.Point(948, 16)
+        Me.ExportToExcel.Location = New System.Drawing.Point(251, 15)
         Me.ExportToExcel.Name = "ExportToExcel"
         Me.ExportToExcel.Size = New System.Drawing.Size(333, 46)
         Me.ExportToExcel.TabIndex = 9
@@ -388,14 +351,11 @@ Partial Class Inventarisatie_PCs
         Me.Controls.Add(Me.Copyright)
         Me.Controls.Add(Me.KroonImage)
         Me.Controls.Add(Me.ExportToExcel)
-        Me.Controls.Add(Me.DeleteDuplicates)
         Me.Controls.Add(Me.Ondertitel)
         Me.Controls.Add(Me.Titel)
         Me.Controls.Add(Me.SearchBoxTitle)
         Me.Controls.Add(Me.SearchBox)
-        Me.Controls.Add(Me.ClearTable)
         Me.Controls.Add(Me.PCTable)
-        Me.Controls.Add(Me.LoadInFiles)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -419,14 +379,11 @@ Partial Class Inventarisatie_PCs
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents LoadInFiles As Button
     Friend WithEvents PCTable As DataGridView
-    Friend WithEvents ClearTable As Button
     Friend WithEvents SearchBox As TextBox
     Friend WithEvents SearchBoxTitle As Label
     Friend WithEvents Titel As Label
     Friend WithEvents Ondertitel As Label
-    Friend WithEvents DeleteDuplicates As Button
     Friend WithEvents ExportToExcel As Button
     Friend WithEvents KroonImage As PictureBox
     Friend WithEvents Copyright As Label

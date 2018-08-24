@@ -513,7 +513,7 @@ Public Class Inventarisatie_PCs
         End With
     End Sub
 
-    Private Sub LoadInFiles_Click(sender As Object, e As EventArgs) Handles LoadInFiles.Click
+    Private Sub LoadInFiles_Click(sender As Object, e As EventArgs) 
         If dataGeladen = False Then
             LoadInFilesAction()
             dataGeladen = True
@@ -522,7 +522,7 @@ Public Class Inventarisatie_PCs
         End If
     End Sub
 
-    Private Sub ClearTable_Click(sender As Object, e As EventArgs) Handles ClearTable.Click
+    Private Sub ClearTable_Click(sender As Object, e As EventArgs) 
         If dataGeladen = True Then
             dt.Clear()
             dataGeladen = False
@@ -536,7 +536,7 @@ Public Class Inventarisatie_PCs
         bs.Filter = VulFilter(PCTable, sender.Text)
     End Sub
 
-    Private Sub DeleteDuplicates_Click(sender As Object, e As EventArgs) Handles DeleteDuplicates.Click
+    Private Sub DeleteDuplicates_Click(sender As Object, e As EventArgs) 
         If dataGeladen = True And duplicatesCleared = False Then
             DeleteDuplicatesInTable()
             duplicatesCleared = True
