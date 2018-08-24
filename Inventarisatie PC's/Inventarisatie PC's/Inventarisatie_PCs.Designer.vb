@@ -50,6 +50,9 @@ Partial Class Inventarisatie_PCs
         Me.ImageTimer = New System.Windows.Forms.Timer(Me.components)
         Me.LogoGDK1 = New System.Windows.Forms.PictureBox()
         Me.ImageTimer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.EditWS = New System.Windows.Forms.Button()
+        Me.EditGPUs = New System.Windows.Forms.Button()
+        Me.EditCPUs = New System.Windows.Forms.Button()
         CType(Me.PCTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KroonImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoGDK2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -329,6 +332,39 @@ Partial Class Inventarisatie_PCs
         '
         Me.ImageTimer2.Interval = 1
         '
+        'EditWS
+        '
+        Me.EditWS.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.EditWS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.EditWS.Location = New System.Drawing.Point(251, 80)
+        Me.EditWS.Name = "EditWS"
+        Me.EditWS.Size = New System.Drawing.Size(333, 46)
+        Me.EditWS.TabIndex = 26
+        Me.EditWS.Text = "Werkstations beheren"
+        Me.EditWS.UseVisualStyleBackColor = True
+        '
+        'EditGPUs
+        '
+        Me.EditGPUs.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.EditGPUs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.EditGPUs.Location = New System.Drawing.Point(937, 80)
+        Me.EditGPUs.Name = "EditGPUs"
+        Me.EditGPUs.Size = New System.Drawing.Size(333, 46)
+        Me.EditGPUs.TabIndex = 27
+        Me.EditGPUs.Text = "GPU's beheren"
+        Me.EditGPUs.UseVisualStyleBackColor = True
+        '
+        'EditCPUs
+        '
+        Me.EditCPUs.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.EditCPUs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.EditCPUs.Location = New System.Drawing.Point(937, 15)
+        Me.EditCPUs.Name = "EditCPUs"
+        Me.EditCPUs.Size = New System.Drawing.Size(333, 46)
+        Me.EditCPUs.TabIndex = 28
+        Me.EditCPUs.Text = "CPU's beheren"
+        Me.EditCPUs.UseVisualStyleBackColor = True
+        '
         'Inventarisatie_PCs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,6 +372,9 @@ Partial Class Inventarisatie_PCs
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1534, 641)
+        Me.Controls.Add(Me.EditCPUs)
+        Me.Controls.Add(Me.EditGPUs)
+        Me.Controls.Add(Me.EditWS)
         Me.Controls.Add(Me.LogoGDK1)
         Me.Controls.Add(Me.LogoGDK10)
         Me.Controls.Add(Me.LogoGDK9)
@@ -402,4 +441,7 @@ Partial Class Inventarisatie_PCs
     Friend WithEvents ImageTimer As Timer
     Friend WithEvents LogoGDK1 As PictureBox
     Friend WithEvents ImageTimer2 As Timer
+    Friend WithEvents EditWS As Button
+    Friend WithEvents EditGPUs As Button
+    Friend WithEvents EditCPUs As Button
 End Class

@@ -153,29 +153,12 @@ Public Class Inventarisatie_PCs
         pI.Y = KroonImage.Top
         KroonImage.Location = pI
 
-        Dim pB1 As New Point
-        pB1.X = (Me.Width / 4) - (LoadInFiles.Width / 2)
-        pB1.Y = LoadInFiles.Top
-        LoadInFiles.Location = pB1
-        LoadInFiles.Width = (Me.Width / 6)
-
-        Dim pB2 As New Point
-        pB2.X = (Me.Width / 4) - (DeleteDuplicates.Width / 2)
-        pB2.Y = DeleteDuplicates.Top
-        DeleteDuplicates.Location = pB2
-        DeleteDuplicates.Width = (Me.Width / 6)
-
         Dim pB3 As New Point
-        pB3.X = (Me.Width / 4 * 3) - (ExportToExcel.Width / 2)
+        pB3.X = (Me.Width / 4) - (ExportToExcel.Width / 2)
         pB3.Y = ExportToExcel.Top
         ExportToExcel.Location = pB3
         ExportToExcel.Width = (Me.Width / 6)
 
-        Dim pB4 As New Point
-        pB4.X = (Me.Width / 4 * 3) - (ClearTable.Width / 2)
-        pB4.Y = ClearTable.Top
-        ClearTable.Location = pB4
-        ClearTable.Width = (Me.Width / 6)
     End Sub
 
     Private Sub ExportToExcelAction()
@@ -513,38 +496,8 @@ Public Class Inventarisatie_PCs
         End With
     End Sub
 
-    Private Sub LoadInFiles_Click(sender As Object, e As EventArgs) 
-        If dataGeladen = False Then
-            LoadInFilesAction()
-            dataGeladen = True
-        Else
-            MessageBox.Show("Er zijn al gegevens ingeladen.", "Probleem gevonden", MessageBoxButtons.OK)
-        End If
-    End Sub
-
-    Private Sub ClearTable_Click(sender As Object, e As EventArgs) 
-        If dataGeladen = True Then
-            dt.Clear()
-            dataGeladen = False
-            duplicatesCleared = False
-        Else
-            MessageBox.Show("De tabel is al leeg.", "Probleem gevonden", MessageBoxButtons.OK)
-        End If
-    End Sub
-
     Private Sub SearchBox_TextChanged(sender As Object, e As EventArgs) Handles SearchBox.TextChanged
         bs.Filter = VulFilter(PCTable, sender.Text)
-    End Sub
-
-    Private Sub DeleteDuplicates_Click(sender As Object, e As EventArgs) 
-        If dataGeladen = True And duplicatesCleared = False Then
-            DeleteDuplicatesInTable()
-            duplicatesCleared = True
-        ElseIf dataGeladen = True And duplicatesCleared = True Then
-            MessageBox.Show("De dubbele werkstations zijn al verwijderd.", "Probleem gevonden", MessageBoxButtons.OK)
-        Else
-            MessageBox.Show("De tabel is leeg, er kan dus niets verwijderd worden.", "Probleem gevonden", MessageBoxButtons.OK)
-        End If
     End Sub
 
     Private Sub ExportToExcel_Click(sender As Object, e As EventArgs) Handles ExportToExcel.Click
